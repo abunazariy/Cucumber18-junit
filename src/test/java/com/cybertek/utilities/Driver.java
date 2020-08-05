@@ -53,6 +53,16 @@ public class Driver {
                         e.printStackTrace();
                     }
                     break;
+                case "firefox-remote":
+                try {
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    URL url = new URL("http://54.208.14.68:4444/wd/hub");
+                    driver = new RemoteWebDriver(url, firefoxOptions);
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
+                break;
+
                 default:
                     throw new RuntimeException("Wrong browser name");
 
